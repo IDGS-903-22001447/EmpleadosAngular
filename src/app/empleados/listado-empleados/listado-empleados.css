@@ -1,0 +1,65 @@
+table {
+  width: 100%;
+  max-width: 900px; /* Slightly wider table */
+  margin: 0 auto 3rem;
+  border-collapse: collapse;
+  font-family: "Roboto", sans-serif; /* Consistent font with the form */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer, more modern shadow */
+  border-radius: 8px; /* Add border-radius to the table */
+  overflow: hidden; /* Ensures border-radius applies to content */
+}
+
+thead th {
+  background: #007bff; /* Bright blue header background */
+  color: #fff;
+  padding: 0.8rem 0.6rem; /* Increased padding */
+  border: none; /* Removed individual cell borders for a cleaner look */
+  font-size: 1rem; /* Slightly larger font size */
+  text-align: left; /* Align text to the left */
+  font-weight: 600; /* Medium bold font */
+}
+
+thead th:first-child {
+  border-top-left-radius: 8px; /* Rounded top-left corner */
+}
+
+thead th:last-child {
+  border-top-right-radius: 8px; /* Rounded top-right corner */
+}
+
+tbody td {
+  border: 1px solid #e0e0e0; /* Lighter, subtle border for cells */
+  padding: 0.7rem 0.6rem; /* Increased padding */
+  font-size: 0.95rem; /* Slightly larger font size */
+  color: #333; /* Darker text color */
+}
+
+tbody tr:nth-child(even) {
+  background: #f8f8f8; /* Very light gray for even rows */
+}
+
+tbody tr:hover {
+  background-color: #e6f7ff; /* Light blue on hover for rows */
+  transition: background-color 0.2s ease;
+}
+
+button {
+  background: #dc3545; /* Bootstrap-like red for delete button */
+  color: #fff;
+  border: none; /* No border for button */
+  border-radius: 5px; /* More rounded button */
+  padding: 0.4rem 1rem; /* Increased padding */
+  font-size: 0.9rem; /* Slightly larger font size */
+  font-weight: 500; /* Medium font weight */
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease; /* Added transform transition */
+}
+
+button:hover {
+  background: #c82333; /* Darker red on hover */
+  transform: translateY(-1px); /* Subtle lift on hover */
+}
+
+button:active {
+  transform: translateY(0); /* Resets on click */
+}

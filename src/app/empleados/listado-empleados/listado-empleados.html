@@ -1,0 +1,31 @@
+<table *ngIf="empleados$ | async as empleados; else sinDatos">
+  <thead>
+    <tr>
+      <th>Núm</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th>Fecha Nac</th>
+      <th>Sexo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let emp of empleados; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ emp.nombre }}</td>
+      <td>{{ emp.correo }}</td>
+      <td>{{ emp.telefono }}</td>
+      <td>{{ emp.fechaNacimiento | date:'dd/MM/yy' }}</td>
+      <td>{{ emp.sexo }}</td>
+      <td>
+        <button (click)="eliminar(emp.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #sinDatos>
+  <p>No hay empleados registrados.</p>
+</ng-template>

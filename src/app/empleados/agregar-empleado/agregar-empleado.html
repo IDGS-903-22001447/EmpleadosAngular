@@ -1,0 +1,43 @@
+<form [formGroup]="empleadoForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <label>
+    Nombre:
+    <input type="text" formControlName="nombre" />
+  </label>
+  <div *ngIf="f['nombre'].touched && f['correo'].invalid" class="error">
+    El nombre y correo es obligatorio.
+  </div>
+
+  <label>
+    Correo:
+    <input type="email" formControlName="correo" />
+  </label>
+  <div *ngIf="f['correo'].touched && f['correo'].invalid" class="error">
+    Ingresa un correo válido.
+  </div>
+
+  <label>
+    Teléfono:
+    <input type="tel" formControlName="telefono" />
+  </label>
+  <div *ngIf="f['telefono'].touched && f['telefono'].invalid" class="error">
+    Solo dígitos (7-15).
+  </div>
+
+  <label>
+    Fecha de Nacimiento:
+    <input type="date" formControlName="fechaNacimiento" />
+  </label>
+
+  <fieldset>
+    <legend>Sexo:</legend>
+    <label>
+      <input type="radio" value="Masculino" formControlName="sexo" /> Masculino
+    </label>
+    <label>
+      <input type="radio" value="Femenino" formControlName="sexo" /> Femenino
+    </label>
+  </fieldset>
+
+  <button type="submit">Agregar</button>
+</form>
